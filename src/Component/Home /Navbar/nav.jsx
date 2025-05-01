@@ -8,10 +8,10 @@ const nav = () => {
 
       <div className="flex items-center gap-6">
         <nav className="flex gap-6">
-          <Link to="/">Home</Link>
-          <Link to="/services">Services</Link>
-          <Link to="/tracking">Tracking</Link>
-          <Link to="/contact">Contact</Link>
+          <Link className='px-2 py-1 hover:bg-gray-500 hover:text-white hover:rounded transform hover:scale-105 transition-all' to="/">Home</Link>
+          <Link className='px-2 py-1 hover:bg-gray-500 hover:text-white hover:rounded transform hover:scale-105 transition-all' to="/services">Services</Link>
+          <Link className='px-2 py-1 hover:bg-gray-500 hover:text-white hover:rounded transform hover:scale-105 transition-all' to="/tracking">Tracking</Link>
+          <Link className='px-2 py-1 hover:bg-gray-500 hover:text-white hover:rounded transform hover:scale-105 transition-all' to="/contact">Contact</Link>
         </nav>
       <button className="font-semibold bg-black text-white px-2 py-2 rounded">
         Book Now

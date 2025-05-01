@@ -6,7 +6,7 @@ import Hero from './Hero_Section/hero'
 const home = () => {
   return (
     <div>
-      Home
+      <Hero />
     </div>
   )
 }

@@ -36,7 +36,7 @@ const nav = () => {
           </Link>
         </nav>
         <button className="font-semibold  bg-blue-400 text-[#FFEEC6] hover:bg-[#FFEEC6] hover:text-blue-400 px-2 py-2 rounded transform hover:scale-110 transition-all">
-          Book Now
+        My Orders
         </button>
       </div>
     </div>

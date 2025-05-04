@@ -1,6 +1,7 @@
 import React from "react";
 import { Clock , Truck , Package } from 'lucide-react';
 import Footer from "../Footer/footer";
+import { Link } from "react-router-dom";
 
 
 const service = [
@@ -37,12 +38,13 @@ const hero = () => {
             business and personal needs.
           </p>
           <div className="flex gap-5">
-            <button className="bg-blue-500 hover:bg-blue-600 text-white px-3 py-3 rounded font-semibold">
+            <Link to='/services'
+             className="bg-blue-500 hover:bg-blue-600 text-white px-3 py-3 rounded font-semibold">
               Book a Shipment →
-            </button>
-            <button className="text-white-500 px-3 py-3 rounded font-semibold hover:bg-blue-100 hover:text-blue-500">
+            </Link >
+            <Link  to='/tracking'className="text-white-500 px-3 py-3 rounded font-semibold hover:bg-blue-100 hover:text-blue-500">
               Track Your Package 
-            </button>
+            </Link>
           </div>
         </div>
 
@@ -70,7 +72,7 @@ const hero = () => {
                 <div>{k.img}</div>
                 <h1 className='font-extrabold text-lg text-blue-600'>{k.title}</h1>
                 <p>{k.description}</p>
-                <button className="hover:bg-blue-500 hover:text-[#FFEEC6] rounded px-1 text-[16px]">Learn More</button>
+                <Link to='/services' className="hover:bg-blue-500 hover:text-[#FFEEC6] rounded px-1 text-[16px]">Learn More</Link>
               </div>
             ))}
           </div>

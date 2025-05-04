@@ -13,10 +13,10 @@ const footer = () => {
             services
           </p>
           <div className="flex gap-5 py-5">
-            <button className="hover:text-blue-600 hover:bg-white p-1 rounded">
+            <button className="hover:text-blue-600 hover:bg-white p-1 rounded border-2 border-white">
               Sign Up Free
             </button>
-            <button className="hover:text-blue-600 hover:bg-white p-1 rounded">
+            <button className="hover:text-blue-600 hover:bg-white p-1 rounded border-2 border-white">
               Login In
             </button>
           </div>

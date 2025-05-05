@@ -15,13 +15,13 @@ const tracking = () => {
           <p className="text-[16px] text-zinc-500">Enter your tracking number below</p>
           <div className="flex flex-row py-5 gap-2">
             <input className='w-full border rounded p-2' type="text" placeholder="Enter tracking number (e.g., MH757888565)" />
-            <button>Track</button>
+            <button className="w-[130px] hover:bg-blue-600 hover:text-white rounded hover:scale-110 transition-all" >Track Order</button>
           </div>
         </div>
       </div>
       <Footer/>
     </div>
-  );
+  )
 };
 
 export default tracking;

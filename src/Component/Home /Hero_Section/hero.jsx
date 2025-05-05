@@ -24,12 +24,11 @@ const service = [
     description: "Specialized transportation for large and heavy items",
   },
 ];
-console.log(service);
 const hero = () => {
   return (
     <div>
-      <div className="flex items-center justify-between w-full h-screen px-8 bg-gradient-to-t from-blue-500 to-blue-800 text-white">
-        <div className="w-1/2 space-y-7 shadow-lg px-2 py-3 w-[700px]">
+      <div className="flex items-center justify-between w-full h-screen px-8 bg-gradient-to-b from-blue-400 to-blue-800 text-white">
+        <div className="w-1/2 space-y-7 shadow-2xl px-4 py-4 w-[700px] bg-">
           <h1 className="text-4xl font-extrabold leading-tight ">
             Reliable Intercity Logistics Solutions
           </h1>

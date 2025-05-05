@@ -5,7 +5,9 @@ const nav = () => {
   return (
     <div className="flex items-center justify-between px-6 py-4 backdrop-blur shadow sticky top-0 z-50">
       <div className="font-extrabold text-lg hover:blue-500">
-        <Link to="/" className="hover:text-blue-500">UrbanDrop</Link>
+        <Link to="/" className="hover:text-blue-500">
+          UrbanDrop
+        </Link>
       </div>
 
       <div className="flex font-extrabold items-center gap-6">
@@ -36,7 +38,7 @@ const nav = () => {
           </Link>
         </nav>
         <button className="font-semibold  bg-blue-400 text-[#FFEEC6] hover:bg-[#FFEEC6] hover:text-blue-400 px-2 py-2 rounded transform hover:scale-110 transition-all">
-        My Orders
+          My Orders
         </button>
       </div>
     </div>

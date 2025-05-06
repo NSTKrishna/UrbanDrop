@@ -21,7 +21,7 @@ let head = [{
 
 const contact = () => {
   return (
-    <div className="bg-gradient-to-r from-blue-400 to-blue-700">
+    <div className="bg-gradient-to-r from-blue-400 to-blue-800">
       <div className="flex justify-center items-center h-screen flex-col">
         <h1 className="text-[32px] font-extrabold text-white">Contact Us</h1>
         <p className="text-[16px] text-white">
@@ -142,7 +142,7 @@ const contact = () => {
       <div className="flex justify-center items-center flex-row gap-10 pb-15">
         {head.map((k) => (
           <div key={k.id} className="flex flex-col gap-5 w-[300px] h-[220px] bg-white px-5 shadow-2xl flex justify-center items-center gap-5 transition duration-300 hover:scale-105 wrap rounded-lg">
-            <h1 className="font-extrabold text-[28px]">{k.title}</h1>
+            <h1 className="font-extrabold text-[28px] border-b">{k.title}</h1>
             <p className="text-gray-500 text-[16px]">{k.description}</p>
           </div> 
         ))} 

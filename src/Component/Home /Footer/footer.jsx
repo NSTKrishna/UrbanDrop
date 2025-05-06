@@ -4,7 +4,7 @@ const footer = () => {
   return (
     <div>
       <div>
-        <div className="flex justify-center items-center flex-col h-[300px] bg-blue-800 text-white border-b">
+        <div className="flex justify-center items-center flex-col h-[300px] bg-blue-800 text-white border-b bg-gradient-to-b from-blue-400 to blue-800">
           <h1 className="font-extrabold text-[32px] py-1">
             Ready to Get Started?
           </h1>

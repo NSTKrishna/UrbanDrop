@@ -3,14 +3,14 @@ import { Link } from "react-router-dom";
 
 const nav = () => {
   return (
-    <div className="flex items-center justify-between px-6 py-4 backdrop-blur shadow sticky top-0 z-50">
+    <div className="flex items-center justify-between px-6 py-4 backdrop-blur shadow sticky top-0 z-50 ">
       <div className="font-extrabold text-lg hover:blue-500">
         <Link to="/" className="hover:text-blue-500">
           UrbanDrop
         </Link>
       </div>
 
-      <div className="flex font-extrabold items-center gap-6">
+      <div className="flex font-extrabold items-center gap-6 ">
         <nav className="flex gap-6">
           <Link
             className=" px-2 text-blue-500 py-1 hover:bg-blue-500 hover:text-white hover:rounded transform hover:scale-105 transition-all "

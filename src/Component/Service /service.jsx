@@ -5,6 +5,14 @@ import { Weight } from "lucide-react";
 
 const Service = () => {
   const [page, setPage] = useState(1);
+  const [select, setSelect] = useState("");
+  const [pickupCity, setPickupCity] = useState("");
+  const [deliveryCity, setDeliveryCity] = useState("");
+  const [pickupDate, setPickupDate] = useState("");
+  const [weight, setWeight] = useState("");
+  const [dimensions, setDimensions] = useState("");
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
 
   function Page() {
     setPage(page + 1);
@@ -56,7 +64,13 @@ const Service = () => {
                   <div>
                     {service_Type.map((data) => (
                       <div key={data.id} className="flex items-center gap-5">
-                        <input type="radio" name="data" value={data.title} />
+                        <input
+                          type="radio"
+                          name="data"
+                          value={data.title}
+                          onChange={(e) => setSelect(e.target.value)}
+                          required
+                        />
                         <div>
                           <label>{data.title}</label>
                           <p>{data.description}</p>
@@ -77,7 +91,12 @@ const Service = () => {
                           <></>
                           <label for="pickupCity">Pickup City</label>
                         </div>
-                        <select name="pickupCity" id="pickupCity">
+                        <select
+                          name="pickupCity"
+                          id="pickupCity"
+                          value={pickupCity}
+                          onChange={(l) => setPickupCity(l.target.value)}
+                        >
                           <option value="" disabled>
                             Select City
                           </option>
@@ -88,9 +107,14 @@ const Service = () => {
                         </select>
                         <div>
                           <></>
-                          <label>Delivery City</label>
+                          <label for="deliveryCity">Delivery City</label>
                         </div>
-                        <select name="pickupCity" id="pickupCity">
+                        <select
+                          name="deliveryCity"
+                          id="deliveryCity"
+                          value={deliveryCity}
+                          onChange={(p) => setDeliveryCity(p.target.value)}
+                        >
                           <option value="" disabled>
                             Select City
                           </option>
@@ -104,7 +128,11 @@ const Service = () => {
                         <></>
                         <label for="Calendar">Pickup Date</label>
                       </div>
-                      <input type="date" id="Calendar" />
+                      <input
+                        type="date"
+                        id="Calendar"
+                        onChange={(e) => setPickupDate(e.target.value)}
+                      />
                       <div>
                         <div>
                           <></>
@@ -114,6 +142,7 @@ const Service = () => {
                           type="text"
                           id="weight"
                           placeholder="Enter Weight"
+                          onChange={(e) => setWeight(e.target.value)}
                         />
                         <div>
                           <></>
@@ -123,6 +152,7 @@ const Service = () => {
                           type="text"
                           id="text"
                           placeholder="eg. 12x10x8"
+                          onChange={(e) => setDimensions(e.target.value)}
                         />
                       </div>
                       <div>
@@ -149,6 +179,7 @@ const Service = () => {
                           type="text"
                           id="name"
                           placeholder="Enter your name"
+                          onChange={(e) => setName(e.target.value)}
                         />
                       </div>
                       <div>
@@ -157,6 +188,7 @@ const Service = () => {
                           type="email"
                           id="email"
                           placeholder="Enter your email"
+                          onChange={(e) => setEmail(e.target.value)}
                         />
                       </div>
                     </div>
@@ -179,11 +211,64 @@ const Service = () => {
                   </div>
                 </div>
               )}
+              {page == 4 && (
+                <div>
+                  <h1>Review & Confirm</h1>
+                  <p>Review your booking details before submitting</p>
+                  <div>
+                    <div>
+                      <label>Service Type</label>
+                      <input placeholder={select} readOnly />
+                    </div>
+                    <div>
+                      <div>
+                        <label>Pickup Location</label>
+                        <input placeholder={pickupCity} readOnly />
+                      </div>
+                      <div>
+                        <label>Delivery Location</label>
+                        <input placeholder={deliveryCity} readOnly />
+                      </div>
+                    </div>
+                    <div>
+                      <label>Pickup Date</label>
+                      <input placeholder={pickupDate} />
+                    </div>
+                    <div>
+                      <div>
+                        <label>Package Weight</label>
+                        <input placeholder={weight} readOnly />
+                      </div>
+                      <div>
+                        <label>Package Dimensions</label>
+                        <input placeholder={dimensions} readOnly />
+                      </div>
+                    </div>
+                    <div>
+                      <label>Package Description</label>
+                      <div>
+                        <div>
+                          <label>Contact Name</label>
+                          <input placeholder={name} readOnly />
+                        </div>
+                        <div>
+                          <label>Contact Email</label>
+                          <input placeholder={email} readOnly />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              )}
             </form>
           </div>
           <div>
             <div>
-              <button onClick={Page}>Next →</button>
+              {page < 4 ? (
+                <button onClick={Page}>Next →</button>
+              ) : (
+                <button onClick={Page}>Submit</button>
+              )}
             </div>
             <div>
               <button onClick={back}>Back →</button>

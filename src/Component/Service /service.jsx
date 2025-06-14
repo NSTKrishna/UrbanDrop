@@ -1,6 +1,5 @@
 import React from "react";
 import { useState } from "react";
-import Footer from "../Home /Footer/Footer";
 import { Weight } from "lucide-react";
 
 const Service = () => {
@@ -276,7 +275,6 @@ const Service = () => {
           </div>
         </div>
       </div>
-      <Footer />
     </div>
   );
 };

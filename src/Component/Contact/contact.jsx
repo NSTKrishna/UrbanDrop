@@ -1,6 +1,5 @@
 import React from "react";
 import { Phone, Mail, MapPin } from "lucide-react";
-import Footer from "../Home /Footer/footer";
 
 let head = [{
   id: 1,
@@ -147,7 +146,6 @@ const contact = () => {
           </div> 
         ))} 
       </div> 
-      <Footer /> 
     </div> 
   );
 };

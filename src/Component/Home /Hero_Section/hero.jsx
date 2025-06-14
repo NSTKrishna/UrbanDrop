@@ -1,6 +1,5 @@
 import React from "react";
 import { Clock, Truck, Package , Check } from "lucide-react";
-import Footer from "../Footer/Footer";
 import { Link } from "react-router-dom";
 
 const point = [
@@ -142,7 +141,6 @@ const hero = () => {
           </div>
         </div>
       </div>
-      <Footer />
     </div>
   );
 };

@@ -1,5 +1,4 @@
 import React from "react";
-import Footer from "../Home /Footer/Footer";
 const tracking = () => {
   return (
     <div>
@@ -19,7 +18,6 @@ const tracking = () => {
           </div>
         </div>
       </div>
-      <Footer/>
     </div>
   )
 };

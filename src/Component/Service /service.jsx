@@ -36,11 +36,20 @@ const Service = () => {
   ];
 
   const handleConfirm = () => {
+    const currentDate = new Date();
+    const deliveryDate = new Date(currentDate);
+    deliveryDate.setDate(currentDate.getDate() + 5);
+
     const newOrder = {
       id: `ORD-${Math.floor(Math.random() * 900 + 100)}`,
       tracking: `SWS${Math.floor(Math.random() * 1e12)}`,
       service: select,
-      date: new Date().toLocaleDateString("en-US", {
+      date: currentDate.toLocaleDateString("en-US", {
+        month: "short",
+        day: "numeric",
+        year: "numeric",
+      }),
+      deliveryDate: deliveryDate.toLocaleDateString("en-US", {
         month: "short",
         day: "numeric",
         year: "numeric",
@@ -73,7 +82,9 @@ const Service = () => {
         <form onSubmit={(e) => e.preventDefault()}>
           {page === 1 && (
             <div>
-              <h2 className="text-lg font-semibold mb-2">Select Service Type</h2>
+              <h2 className="text-lg font-semibold mb-2">
+                Select Service Type
+              </h2>
               <p className="text-sm mb-4 text-gray-600">
                 Choose the type of transportation service you need
               </p>
@@ -273,17 +284,39 @@ const Service = () => {
             <div>
               <h2 className="text-lg font-semibold mb-3">Review & Confirm</h2>
               <div className="space-y-2 text-sm text-gray-700">
-                <p><strong>Service Type:</strong> {select}</p>
-                <p><strong>From:</strong> {pickupCity}</p>
-                <p><strong>To:</strong> {deliveryCity}</p>
-                <p><strong>Pickup Date:</strong> {pickupDate}</p>
-                <p><strong>Weight:</strong> {weight}</p>
-                <p><strong>Dimensions:</strong> {dimensions}</p>
-                <p><strong>Description:</strong> {description}</p>
-                <p><strong>Name:</strong> {name}</p>
-                <p><strong>Email:</strong> {email}</p>
-                <p><strong>Phone:</strong> {phone}</p>
-                <p><strong>Address:</strong> {address}</p>
+                <p>
+                  <strong>Service Type:</strong> {select}
+                </p>
+                <p>
+                  <strong>From:</strong> {pickupCity}
+                </p>
+                <p>
+                  <strong>To:</strong> {deliveryCity}
+                </p>
+                <p>
+                  <strong>Pickup Date:</strong> {pickupDate}
+                </p>
+                <p>
+                  <strong>Weight:</strong> {weight}
+                </p>
+                <p>
+                  <strong>Dimensions:</strong> {dimensions}
+                </p>
+                <p>
+                  <strong>Description:</strong> {description}
+                </p>
+                <p>
+                  <strong>Name:</strong> {name}
+                </p>
+                <p>
+                  <strong>Email:</strong> {email}
+                </p>
+                <p>
+                  <strong>Phone:</strong> {phone}
+                </p>
+                <p>
+                  <strong>Address:</strong> {address}
+                </p>
               </div>
             </div>
           )}
@@ -294,7 +327,8 @@ const Service = () => {
                 Booking Successful!
               </h2>
               <p className="text-gray-600">
-                Your shipment has been booked. You can track it in the orders page.
+                Your shipment has been booked. You can track it in the orders
+                page.
               </p>
             </div>
           )}

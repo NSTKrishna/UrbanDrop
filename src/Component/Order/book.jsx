@@ -67,25 +67,19 @@ const Book = () => {
               <button className="border rounded-md px-4 py-2 text-sm bg-blue-600 text-white">
                 <Link to="/tracking">Track Shipment</Link>
               </button>
-              {orders.map((order) => (
-                <div>
-                  <button className="border rounded-md px-4 py-2 text-sm bg-red-600 text-white" onClick = {
-                    () => {
-                      const update = orders.filter(
-                        (o) => o.id !== order.id
-                      );
-                      setOrders(update);
-                      localStorage.setItem(
-                        "orders",
-                        JSON.stringify(update)
-                      );
-                    }
-                  } >
-                    Cancel Order
-                  </button>
-                </div>
-              ))}
+              <div className="flex gap-4">
 
+                <button
+                  className="border rounded-md px-4 py-2 text-sm bg-red-600 text-white"
+                  onClick={() => {
+                    const update = orders.filter((o) => o.id !== order.id);
+                    setOrders(update);
+                    localStorage.setItem("orders", JSON.stringify(update));
+                  }}
+                >
+                  Cancel Order
+                </button>
+              </div>
             </div>
           </div>
         ))

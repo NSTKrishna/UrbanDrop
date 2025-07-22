@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useState} from "react";
 import { Phone, Mail, MapPin } from "lucide-react";
 
 let head = [
@@ -23,6 +23,32 @@ let head = [
 ];
 
 const Contact = () => {
+
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
+  const [subject, setSubject] = useState("");
+  const [message, setMessage] = useState("");
+
+  const handleSubmit = () => {
+
+  const Feed = {
+    id : Math.floor(Math.random() * 10000),
+    name: name,
+    email: email,
+    phone: phone,
+    subject: subject,
+    message: message,
+  }
+
+  const submit = JSON.parse(localStorage.getItem('FeedBack')) || [];
+  submit.push(Feed);
+  localStorage.setItem('FeedBack', JSON.stringify(submit));
+
+      alert("Feedback submitted successfully!");
+  }
+
+
   return (
     <div className="bg-gradient-to-r from-blue-400 to-blue-800 py-10 px-4">
       <div className="max-w-7xl mx-auto flex flex-col justify-center items-center">
@@ -34,7 +60,7 @@ const Contact = () => {
         </p>
 
         <div className="flex flex-col lg:flex-row gap-8 mt-10 w-full">
-          {/* Contact Info */}
+
           <section className="bg-white shadow-2xl p-5 rounded-lg flex-1 w-full">
             <h2 className="text-2xl font-bold">Contact Information</h2>
             <p className="mt-1 text-gray-500">
@@ -75,13 +101,12 @@ const Contact = () => {
             </div>
           </section>
 
-          {/* Message Form */}
           <section className="bg-white shadow-2xl p-6 rounded-lg flex-1 w-full">
             <h2 className="text-2xl font-bold">Send Us a Message</h2>
             <p className="text-gray-500 mt-1">
               Fill out the form below and we'll get back to you as soon as possible
             </p>
-            <form className="space-y-5 mt-6 w-full">
+            <form className="space-y-5 mt-6 w-full" onSubmit={handleSubmit}>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="flex flex-col">
                   <label htmlFor="name" className="text-sm font-medium">
@@ -92,6 +117,8 @@ const Contact = () => {
                     id="name"
                     placeholder="Enter your full name"
                     className="p-2 border border-gray-300 rounded"
+                    onChange={(e) => setName(e.target.value)}
+                    value={name}
                     required
                   />
                 </div>
@@ -104,6 +131,8 @@ const Contact = () => {
                     id="email"
                     placeholder="Enter your email"
                     className="p-2 border border-gray-300 rounded"
+                    onChange={(e) => setEmail(e.target.value)}
+                    value={email}
                     required
                   />
                 </div>
@@ -119,6 +148,8 @@ const Contact = () => {
                     id="number"
                     placeholder="Enter your number"
                     className="p-2 border border-gray-300 rounded"
+                    onChange={(e) => setPhone(e.target.value)}
+                    value={phone}
                     required
                   />
                 </div>
@@ -130,6 +161,8 @@ const Contact = () => {
                     className="p-2 border border-gray-300 rounded"
                     name="Subject"
                     id="subject"
+                    onChange={(e) => setSubject(e.target.value)}
+                    value={subject}
                     required
                   >
                     <option value="general">General Inquiry</option>
@@ -148,6 +181,7 @@ const Contact = () => {
                   className="w-full h-[150px] border border-gray-300 rounded p-2"
                   id="message"
                   placeholder="Enter your message"
+                  onChange={(e) => setMessage(e.target.value)}
                   required
                 ></textarea>
               </div>
@@ -162,7 +196,6 @@ const Contact = () => {
           </section>
         </div>
 
-        {/* Office Locations */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-16 w-full">
           {head.map((k) => (
             <div

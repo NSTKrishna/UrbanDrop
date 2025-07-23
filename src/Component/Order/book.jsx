@@ -68,7 +68,6 @@ const Book = () => {
                 <Link to="/tracking">Track Shipment</Link>
               </button>
               <div className="flex gap-4">
-
                 <button
                   className="border rounded-md px-4 py-2 text-sm bg-red-600 text-white"
                   onClick={() => {

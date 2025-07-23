@@ -1,5 +1,5 @@
 import React from "react";
-import { Clock, Truck, Package , Check } from "lucide-react";
+import { Clock, Truck, Package, Check } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const point = [
@@ -57,59 +57,57 @@ const service = [
 const hero = () => {
   return (
     <div>
-      <div className="flex items-center justify-between w-full h-screen px-8 bg-gradient-to-b from-blue-400 to-blue-800 text-white">
-        <div className="w-1/2 space-y-7 shadow-2xl px-4 py-4 w-[700px] bg-">
-          <h1 className="text-4xl font-extrabold leading-tight ">
+      <div className="flex flex-col lg:flex-row items-center justify-between w-full min-h-screen px-6 py-10 bg-gradient-to-b from-blue-400 to-blue-800 text-white gap-10">
+        <div className="space-y-6 shadow-2xl px-4 py-4 w-full lg:w-1/2">
+          <h1 className="text-3xl md:text-4xl font-extrabold leading-tight ">
             Reliable Intercity Logistics Solutions
           </h1>
-          <p className="text-lg text-gray-300">
+          <p className="text-base md:text-lg text-gray-300">
             Fast, secure, and efficient transportation services for your
             business and personal needs.
           </p>
-          <div className="flex gap-5">
+          <div className="flex flex-col sm:flex-row gap-4">
             <Link
               to="/services"
-              className="bg-blue-500 hover:bg-blue-600 text-white px-3 py-3 rounded font-semibold"
+              className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded font-semibold text-center"
             >
               Book a Shipment →
             </Link>
             <Link
               to="/tracking"
-              className="text-white-500 px-3 py-3 rounded font-semibold hover:bg-blue-100 hover:text-blue-500"
+              className="text-white border border-white px-4 py-2 rounded font-semibold text-center hover:bg-blue-100 hover:text-blue-7000"
             >
               Track Your Package
             </Link>
           </div>
         </div>
 
-        <div className="w-1/2 flex justify-center items-center">
+        <div className="w-full lg:w-1/2 flex justify-center items-center">
           <img
             src="./../../assets/Transport.png"
             alt="Logistics Illustration"
-            className="w-[90%] h-[90%] object-cover rounded-lg"
+            className="w-full max-w-[500px] object-cover rounded-lg"
           />
         </div>
       </div>
       <div>
-        <div className="flex justify-center items-center h-[80vh] bg-gray-100 flex-col gap-10">
+        <div className="flex justify-center items-center bg-gray-100 flex-col gap-10 px-4 py-12">
           <div className="text-center">
-            <h1 className="font-extrabold text-7xl py-5">
+            <h1 className="font-extrabold text-4xl md:text-5xl py-4">
               Our Transportation Services
             </h1>
-            <p className="text-2xl">
+            <p className="text-lg md:text-2xl text-gray-700">
               Choose the service that best fits your logistics needs
             </p>
           </div>
-          <div className="flex flex-wrap justify-center items-center gap-10 text-center ">
+          <div className="flex flex-wrap justify-center items-center gap-6 text-center">
             {Object.values(service).map((k) => (
               <div
                 key={k.id}
-                className="w-[300px] h-[300px] shadow-lg flex justify-center items-center flex-col gap-5 px-2 transition duration-300 hover:scale-105"
+                className="w-[280px] h-[280px] shadow-lg flex flex-col justify-center items-center gap-4 px-3 py-4 bg-white rounded-lg transition duration-300 hover:scale-105"
               >
-                <div>{k.img}</div>
-                <h1 className="font-extrabold text-lg text-blue-600">
-                  {k.title}
-                </h1>
+                <div className="text-blue-600">{k.img}</div>
+                <h1 className="text-sm text-gray-600">{k.title}</h1>
                 <p>{k.description}</p>
                 <Link
                   to="/services"
@@ -122,23 +120,26 @@ const hero = () => {
           </div>
         </div>
       </div>
-      <div>
-        <div className="flex justify-center items-center flex-col h-[700px] bg-gray-100 gap-3">
-          <h1 className="font-extrabold text-7xl p-3">Why Choose Us</h1>
-          <p className="text-2xl text-gray-500">We provide reliable and efficient logistics solutions</p>
-          <div className="flex flex-row flex-wrap justify-center gap-5">
-            {Object.values(point).map((data) => (
-              <div className="flex w-[300px] flex-col gap-4">
-                <h1 className="font-bold text-center">
-                  <Check className="text-blue-500"/>
-                  {data.title}
-                </h1>
-                <p className="text-center">
-                  {data.description}
-                </p>
-              </div>
-            ))}
-          </div>
+      <div className="flex flex-col items-center bg-gray-100 px-4 py-16 gap-6">
+        <h1 className="font-extrabold text-4xl md:text-5xl">Why Choose Us</h1>
+        <p className="text-lg md:text-2xl text-gray-600 text-center">
+          We provide reliable and efficient logistics solutions
+        </p>
+        <div className="flex flex-wrap justify-center gap-6">
+          {point.map((data) => (
+            <div
+              key={data.id}
+              className="w-[280px] flex flex-col items-center gap-3 bg-white p-4 rounded-lg shadow"
+            >
+              <h2 className="font-semibold text-blue-600 flex items-center gap-2">
+                <Check className="text-blue-500" />
+                {data.title}
+              </h2>
+              <p className="text-sm text-gray-600 text-center">
+                {data.description}
+              </p>
+            </div>
+          ))}
         </div>
       </div>
     </div>

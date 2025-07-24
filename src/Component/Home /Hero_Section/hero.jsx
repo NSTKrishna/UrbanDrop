@@ -1,6 +1,7 @@
 import React from "react";
 import { Clock, Truck, Package, Check } from "lucide-react";
 import { Link } from "react-router-dom";
+import transportImg from "../../../../assets/Transport.png";
 
 const point = [
   {
@@ -84,7 +85,7 @@ const hero = () => {
 
         <div className="w-full lg:w-1/2 flex justify-center items-center">
           <img
-            src="./../../assets/Transport.png"
+            src={transportImg}
             alt="Logistics Illustration"
             className="w-full max-w-[500px] object-cover rounded-lg"
           />
